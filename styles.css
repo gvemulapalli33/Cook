@@ -39,6 +39,11 @@ body {
     align-self: center;
     padding: .5em 1em;
     border-radius: 1em;
+    outline: none;
+}
+
+.btn:focus, .btn:hover {
+    border: 3px solid white;
 }
 
 ul {
@@ -73,4 +78,24 @@ ul li {
 .highlight {
     padding: .3em;
     color: #ee5253;
+}
+
+.message {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.text {
+    font-size: 1rem;
+}
+
+p, .dishName {
+    margin: 0;
+    padding: 0;
 }
