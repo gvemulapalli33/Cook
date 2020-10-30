@@ -7,13 +7,14 @@ grey - #95a5a6;
 red - #ee5253
 
 */
+
+html,body{margin:0;padding:0;}
 body {
     font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
     background-image: url('./assets/burger-friends.jpg');
     background-position: center;
     background-size: cover;
+    height: 100vh;
 }
 
 .container {
@@ -44,6 +45,17 @@ body {
 
 .btn:focus, .btn:hover {
     border: 3px solid white;
+}
+
+.add {
+    background-color: #0fb9b1;
+    margin-left: 2em;
+}
+
+.form-container {
+    width: 100%;
+    background-color: rgba(225, 225, 225, .9);
+    display: none;
 }
 
 ul {
@@ -112,4 +124,20 @@ p, .dishName {
     text-transform: uppercase;
     padding: .5em 1.5em;
     border-radius: 5px;
+}
+
+.form-container{
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: 20px;
+}
+
+.form-container label {
+    margin-left: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
