@@ -6,9 +6,10 @@
   <body>
     <header class="heading">
       <h2 class="title">Whats for Dinner?</h2>
-      <button class="btn">Add a Recepie</button>
+      <button class="btn addRecepieBtn">Add a Recepie</button>
     </header>
-    <main class="container">
+    <main>
+      <section class="container">
       <section class="items">
         <h3>What are you looking for?<span class="highlight">*</span></h3>
         <ul>
@@ -21,6 +22,14 @@
       </section>
       <section class="cook items">
       </section>
+    </section>
+      <form name="addRecepie" class="form-container">
+        <label for="type">Recepie Type:</label>
+        <input id="type" name="type"/>
+        <label for="recepieName">Recepie Name:</label>
+        <input id="recepieName" name="recepieName"/>
+        <button class="btn add">Add new</button>
+      </form>
     </main>
   </body>
   <script type="text/javascript" src="main.js"></script>

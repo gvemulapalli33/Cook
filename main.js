@@ -9,18 +9,42 @@ const dishesMenu = {
     "Banana Bread"]
 }
 
+function addMenuItem() {
+    let form = document.forms.addRecepie;
+    let recepieName = form.elements.recepieName.value;
+    let recepieType = form.elements.type.value;
+    let types = Object.keys(dishesMenu);
+    if (recepieName && recepieType && types.includes(recepieType)) {
+       dishesMenu[recepieType].push(recepieName);
+       generateDish(recepieType, recepieName, error);
+    }
+    if (!types.includes(recepieType)) {
+        generateDish(recepieType, recepieName, true);
+    }
+}
+
 function handleClick(event) {
 
     if (event.target.name === 'dish') {
-        if(event.target.checked) {
+        if (event.target.checked) {
             $button.disabled = false;
         }
     }
 
+    if (event.target.classList.contains('addRecepieBtn')) {
+        document.forms.addRecepie.style.display = 'block';
+    }
+
+    if (event.target.classList.contains('add')) {
+         event.preventDefault();
+         addMenuItem();
+    }
+
     if (event.target.classList.contains('btn-cook')) {
+        showLoading();
         const selections = document.querySelectorAll('input');
         const dishType = [...selections].find((item) => item.checked).id;
-        generateDish(dishType);
+        setTimeout(() => generateDish(dishType), 2000);
     }
 
     if (event.target.classList.contains('clear')) {
@@ -44,14 +68,29 @@ function getDish(dishType) {
     return dish;
 }
 
-function generateDish(dishType) {
+function generateDish(dishType, dishName, error) {
+    let errMessage;
+    $message.classList.remove('cook');
+    if (error) {
+        errMessage = `${dishType} is not in Menu`;
+    }
+    $message.innerHTML = 
+    `<section class="message">
+        <span hidden=${errMessage} class="text"><em>You should make</em></span> 
+        <p class="dishName">
+        ${errMessage || dishName || (dishType === 'entireMeal' ? 
+        getEntireMeal() : getDish(dishType))}
+        </p>
+        <button class="clear">clear</button>
+        <button hidden=${errMessage} class="btn delete">Delete</button>
+     </section>`;
+}
+
+function showLoading() {
     $message.classList.remove('cook');
     $message.innerHTML = 
     `<section class="message">
-        <span class="text"><em>You should make</em></span> 
-        <p class="dishName">${dishType === 'entireMeal' ? 
-        getEntireMeal() : getDish(dishType)}</p>
-        <button class="clear">clear</button>
+        <span class="dishName"><em>Loading ...</em></span> 
      </section>`;
 }
 
