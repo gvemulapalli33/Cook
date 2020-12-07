@@ -6,6 +6,11 @@ Link to published site: https://gvemulapalli33.github.io/Cookbook/
 
 ![](SelectDinner.gif)
 
+
+
+
+
+
 ## Features
 1. When user selects a dish type and click on `Lets cook` button, a random dish of the selected dishType appears.
 2. A timeout of 2s is addded to simulate the fell of API call.
