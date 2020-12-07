@@ -2,6 +2,8 @@
 
 Project to select Dish you want to cook.
 
+Link to published site: https://gvemulapalli33.github.io/Cookbook/
+
 ![](SelectDinner.gif)
 
 ## Features
@@ -26,6 +28,5 @@ Project to select Dish you want to cook.
 1. Webpack
 2. github pages to deploy site
 
-Link to published site: https://gvemulapalli33.github.io/Cookbook/
 
 
