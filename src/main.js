@@ -27,7 +27,6 @@ class App {
         });
     }
 
-
     addMenuItem() {
         let form = document.forms.addRecepie;
         let recepieName = form.elements.recepieName.value;
@@ -35,11 +34,18 @@ class App {
         let types = Object.keys(this.dishesMenu);
         if (recepieName && recepieType && types.includes(recepieType)) {
             this.dishesMenu[recepieType].push(recepieName);
-            this.generateDish(recepieType, recepieName, error);
+            this.generateDish(recepieType, recepieName, false);
         }
         if (!types.includes(recepieType)) {
             this.generateDish(recepieType, recepieName, true);
         }
+        this.clearForm();
+    }
+
+    clearForm() {
+        let form = document.forms.addRecepie;
+        form.elements.recepieName.value = '';
+        form.elements.type.value = '';
     }
 
     disableButton(event) {

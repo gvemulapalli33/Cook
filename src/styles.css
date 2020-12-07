@@ -20,9 +20,10 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
+    max-height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 6vh 94vh;
+    overflow: hidden;
 }
 
 ul {
@@ -55,7 +56,7 @@ ul li {
 
 main {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr auto;
 }
 
 .btn {
@@ -77,13 +78,11 @@ main {
 }
 
 .form-container {
-    width: 100%;
+    max-width: 100%;
     background-color: rgba(225, 225, 225, .9);
     display: none;
-    margin-top: auto;
-    margin-bottom: 0;
     padding: 20px;
-    grid-template-columns: 100px, minmax(200px, 1fr), 110px, minmax(200px 1fr), minmax(200px 250px);
+    grid-template-columns: 100px 200px 110px 200px 200px;
     grid-gap:.5em;
 }
 
@@ -158,4 +157,38 @@ p, .dishName {
     text-transform: uppercase;
     padding: .5em 1.5em;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 450px) {
+    .form-container {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .form-container label:first-child {
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+    
+    .form-container input:first-of-type {
+        grid-column: 2/2;
+        grid-row: 1/1;
+    }
+    
+    .form-container label:last-of-type {
+        grid-column: 1/1;
+        grid-row: 2/2;
+    }
+    
+    .form-container input:last-of-type {
+        grid-column: 2/2;
+        grid-row: 2/2;
+    }
+
+
+    .add {
+        grid-column: 1/-1;
+        margin-left: 0;
+    }
+
 }
