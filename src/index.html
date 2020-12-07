@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>What's For Dinner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width;initial-scale=1"/>
+    <meta name="description" content="Website for choosing what to cook for Dinner?">
+  </head>
+  <body>
+    <header class="heading">
+      <h2 class="title">Whats for Dinner?</h2>
+      <button class="btn addRecepieBtn">Add a Recepie</button>
+    </header>
+    <main>
+      <section class="container">
+        <section class="items">
+          <h3>What are you looking for?<span class="highlight">*</span></h3>
+          <ul>
+            <li><input id="sides" type="radio" name="dish"/><label for="sides"/>Side</li></label></li>
+            <li><input id="mains" type="radio" name="dish"/><label for="mains"/>Main Dish</li></label></li>
+            <li><input id="desserts" type="radio" name="dish"/><label for="desserts"/>Dessert</li></label></li>
+            <li><input id="entireMeal" type="radio" name="dish"/><label for="entireMeal"/>Entire Meal</li></label></li>
+          </ul>
+          <button disabled class="btn btn-cook">Lets Cook</button>
+        </section>
+        <section class="cook items">
+        </section>
+      </section>
+      <form name="addRecepie" class="form-container">
+        <label for="type">Recepie Type:</label>
+        <input id="type" name="type"/>
+        <label for="recepieName">Recepie Name:</label>
+        <input id="recepieName" name="recepieName"/>
+        <button aria-label="add new Recepie"class="btn add">Add new</button>
+      </form>
+    </main>
+  </body>
+</html>

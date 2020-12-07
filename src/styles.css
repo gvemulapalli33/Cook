@@ -8,19 +8,39 @@ red - #ee5253
 
 */
 
-html,body{margin:0;padding:0;}
+html, body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./assets/burger-friends.jpg');
+    background-image: url('../assets/burger-friends.jpg');
     background-position: center;
+    background-attachment: fixed;
     background-size: cover;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    padding: .5em;
 }
 
 .container {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2em;
+    grid-template-rows: repeat(2, 350px);
 }
 
 .heading {
@@ -28,10 +48,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding: .5em;
     font-weight: bold;
     font-size: 14px;
     padding: 0 1em;
+}
+
+main {
+    display: grid;
+    grid-template-rows: auto auto;
 }
 
 .btn {
@@ -56,27 +80,37 @@ body {
     width: 100%;
     background-color: rgba(225, 225, 225, .9);
     display: none;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: 20px;
+    grid-template-columns: 100px, minmax(200px, 1fr), 110px, minmax(200px 1fr), minmax(200px 250px);
+    grid-gap:.5em;
 }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.form-container label:first-child {
+    grid-column: 1/1;
 }
 
-ul li {
-    padding: .5em;
+.form-container input:first-of-type {
+    grid-column: 2/2;
+}
+
+.form-container label:last-of-type {
+    grid-column: 3/3;
+}
+
+.form-container input:last-of-type {
+    grid-column: 4/4;
 }
 
 .items {
     margin: 2em 2em;
-    width: 45%;
     padding: 1em;
     background-color: rgba(225, 225, 225, .9);
 }
 
 .cook {
-    background-image: url('./assets/cookpot.svg');
+    background-image: url('../assets/cookpot.svg');
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -124,20 +158,4 @@ p, .dishName {
     text-transform: uppercase;
     padding: .5em 1.5em;
     border-radius: 5px;
-}
-
-.form-container{
-    margin-top: auto;
-    margin-bottom: 0;
-    padding: 20px;
-}
-
-.form-container label {
-    margin-left: 2em;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }

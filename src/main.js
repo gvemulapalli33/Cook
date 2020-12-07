@@ -1,8 +1,10 @@
+import "./styles.css";
+
 class App {
 
     constructor() {
         this.dishesMenu = {
-            sides : ["Miso Glazed Carrots", "Coleslaw", "Garden Salad", "Crispy Potatoes"],
+            sides : ["Miso Glazed Carrots", "Coleslaw", "Garden Salad", "Crispy Potatoes", "Sweet Potato Tots", "Coconut Rice", "Caeser Salad", "Shrimp Summer Rolls"],
             mains : ["Spaghetti and Meatballs", "Pineapple Chicken", "Shakshuka", 
             "Thai Yellow Curry", "Bibimbap"],
             desserts : ["Apple Pie", "Lemon Meringue Pie", "Black Forest Cake", 
@@ -52,7 +54,7 @@ class App {
     showAddRecepie(event) {
         let {target} = event;
         if (target.classList.contains('addRecepieBtn')) {
-            document.forms.addRecepie.style.display = 'block';
+            document.forms.addRecepie.style.display = 'grid';
         }
     }
 
