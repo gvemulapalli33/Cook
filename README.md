@@ -2,11 +2,7 @@
 
 Project to select Dish you want to cook.
 
-
-
-
-
-
+![](SelectDinner.gif)
 
 ## Features
 1. When user selects a dish type and click on `Lets cook` button, a random dish of the selected dishType appears.
