@@ -32,8 +32,8 @@ class App {
         let recepieType = form.elements.type.value;
         let types = Object.keys(this.dishesMenu);
         if (recepieName && recepieType && types.includes(recepieType)) {
-        this.dishesMenu[recepieType].push(recepieName);
-        this.generateDish(recepieType, recepieName, error);
+            this.dishesMenu[recepieType].push(recepieName);
+            this.generateDish(recepieType, recepieName, error);
         }
         if (!types.includes(recepieType)) {
             this.generateDish(recepieType, recepieName, true);
