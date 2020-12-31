@@ -4,12 +4,6 @@ Project to select Dish you want to cook.
 
 Link to published site: https://gvemulapalli33.github.io/Cookbook/
 
-![](SelectDinner.gif)
-
-
-
-
-
 
 ## Features
 1. When user selects a dish type and click on `Lets cook` button, a random dish of the selected dishType appears.
@@ -18,6 +12,15 @@ Link to published site: https://gvemulapalli33.github.io/Cookbook/
 4. User can click `clear` button to clear the dish.
 5. `Lets'cook` button is disabled until user choose a dish type.
 6. User can `Add a Recipe` to the availaible list by entering details in form.
+
+
+## ScreenShots
+![screenshot](https://raw.github.com/gvemulapalli33/Cookbook/master/initialScreen.png)
+![screenshot](https://raw.github.com/gvemulapalli33/Cookbook/master/choice.png)
+![screenshot](https://raw.github.com/gvemulapalli33/Cookbook/master/let'sCook.png)
+![screenshot](https://raw.github.com/gvemulapalli33/Cookbook/master/randomItem.png)
+![screenshot](https://raw.github.com/gvemulapalli33/Cookbook/master/newItem.png)
+
 
 ## Set up
 1. npm install to install all dependecies
